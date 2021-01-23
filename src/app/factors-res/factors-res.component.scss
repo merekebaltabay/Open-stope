@@ -1,0 +1,57 @@
+#aFactor {
+    position: fixed;
+    top: 15%;
+    right: 30%;
+    width: 22%;
+    height: 30%;
+    margin-left: 0em;
+    margin-top: 2em;
+  }
+  
+  #bFactor {
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    width: 22%;
+    height: 30%;
+    margin-left: 0em;
+    margin-top: 2em;
+  }
+  
+  #cFactor {
+    position: fixed;
+    top: 40%;
+    right: 30%;
+    width: 22%;
+    height: 30%;
+    margin-left: 0em;
+    margin-top: 4em;
+  }
+  
+  #fFactor {
+    position: fixed;
+    top: 40%;
+    right: 5%;
+    width: 22%;
+    height: 30%;
+    margin-left: 0em;
+    margin-top: 4em;
+  }
+  
+  .next button {
+    background-color: #226556;
+    border: none;
+    color: white;
+    padding: 0.4em;
+    width: 15%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 0.5em;
+    display: block;
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+  }
+  .next button:focus {
+    outline:none !important;}

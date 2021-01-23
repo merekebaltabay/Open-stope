@@ -1,0 +1,7 @@
+<app-tool-nav></app-tool-nav>
+<h4>Hydraulic Radius Calculation</h4>
+    <div class="symmetry">
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./symmetric']" [routerLinkActiveOptions]="{exact: true}">Stope is symmetric</a>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['./asymmetric']" [routerLinkActiveOptions]="{exact: false}">asymmetric</a>
+    </div>
+    <router-outlet></router-outlet>

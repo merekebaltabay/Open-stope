@@ -1,0 +1,139 @@
+<app-tool-nav></app-tool-nav>
+<div class="row">
+  <div class="col-32">
+    <div id="wrapper">
+      <div id="box-area">
+        <div class="box" id="front">Hangingwall</div>
+        <div class="box" id="back">Footwall</div>
+        <div class="box" id="top">Stope Back</div>
+        <div class="box" id="bottom">Bottom</div>
+        <div class="box" id="left">Sidewall</div>
+        <div class="box" id="right">Sidewall</div>
+      </div>
+    </div>
+  <div class="hr">
+    <h4>Stope Volume <span style="float:right;color:#226556;font-size:0.8em;">{{volume}} m<sup>3</sup></span></h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Stope Back</th>
+      <th>Hangingwall</th>
+      <th>Footwall</th>
+      <th style="border-right:none;">Sidewall</th>
+    </tr>
+
+    <tr id="hr">
+      <td style="padding-right:0.5em;">S Factor</td>
+      <td>{{hrCrown}} m</td>
+      <td>{{hrHang}} m</td>
+      <td>{{hrFoot}} m</td>
+      <td style="border-right:none;">{{hrSide}} m</td>
+    </tr>
+
+    <tr>
+      <td style="padding-right:0.5em;">Area</td>
+      <td>{{crownA}} m<sup>2</sup></td>
+      <td>{{hangA}} m<sup>2</sup></td>
+      <td>{{footA}} m<sup>2</sup></td>
+      <td style="border-right:none;">{{sideA}} m<sup>2</sup></td>
+    </tr>
+
+    <tr>
+      <td style="padding-right:0.5em;">Perimeter</td>
+      <td>{{crownP}} m&nbsp;</td>
+      <td>{{hangP}} m&nbsp;</td>
+      <td>{{footP}} m&nbsp;</td>
+      <td style="border-right:none;">{{sideP}} m&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="qval">
+  <h3 style="font-size: 2em; color:#226556; text-align:center;">Q' = {{qRes}}</h3>
+  <p>Very good. Intact or massive in-situ rock with few discontinuities. 
+    Surface is likely rough and unweathered or very slightly weathered.</p>
+  </div>
+  </div>
+
+  <div class="col-36">
+    <div class="stressRes">
+<p><i class="fas fa-exchange-alt" style="padding-right:0.4em; color:#226556; font-size:1.3em;"></i>Induced stress at stope back 
+  <span style="color:#226556; font-style:bold; font-size:1.3em; padding-left: 8em;">{{crownIndStress}} MPa</span></p><br>
+<p><i class="fas fa-exchange-alt" style="padding-right:0.4em; color:#226556; font-size:1.3em;"></i>Induced stress at hangingwall & footwall 
+  <span style="color:#226556; font-style:bold; font-size:1.3em; padding-left:4em;">{{fhIndStress}} MPa</span></p>
+<p><i class="fas fa-exchange-alt" style="padding-right:0.4em; color:#226556; font-size:1.3em;"></i>Induced stress at sidewalls 
+  <span style="color:#226556; font-style:bold; font-size:1.3em; padding-left: 8.6em;">{{sideIndStress}} MPa</span></p>
+
+</div>
+    <div class="factors">
+        <div class="col-50">
+          <h4 style="text-align:center">Factor A</h4>
+          <canvas baseChart
+                  [datasets]="barChartDataA"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="aChartColors">
+          </canvas>
+      
+          <h4 style="text-align:center">Factor B</h4>
+          <canvas baseChart
+                  [datasets]="barChartDataB"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="bChartColors">
+          </canvas>
+        </div>
+      
+        <div class="col-50">
+          <h4 style="text-align:center">Factor C</h4>
+            <canvas baseChart
+                  [datasets]="barChartDataC"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="cChartColors">
+          </canvas>
+      
+          <h4 style="text-align:center">Factor T</h4>
+          <canvas baseChart
+                  [datasets]="barChartDataF"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="fChartColors">
+          </canvas>
+        </div>
+  </div>
+</div>
+
+  <div class="col-32">
+    <div class="stabGraph">
+    <h3>Refined Stability Graph</h3>
+    <canvas baseChart
+    [datasets]="refinedChartData"
+    [options]="scatterChartOptions"
+    [legend]="scatterChartLegend"
+    [colors]="stabChartColors">
+</canvas>
+</div>
+  </div>
+</div>
+
+
+<div class="next">
+  <button class="nav-item nav-link-edit" routerLink="/additional">Other options &raquo;</button>
+  <button id="export">Export</button>
+</div>
+
+<div class="back">
+  <button class="nav-item nav-link-edit" routerLink="/stability">&laquo;  Back</button>
+</div>

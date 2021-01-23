@@ -1,0 +1,70 @@
+// @Date:   2019-03-29T00:19:42+06:00
+// @Last modified time: 2019-03-29T01:02:03+06:00
+
+ .mat-dialog-content {
+  overflow: auto !important;
+  height: 35em !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 0.6em;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.6em;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6em;
+  margin: auto;
+}
+
+h6 {
+  text-align: left;
+  font-weight: normal;
+  margin-bottom: 0em;
+  margin-top: 1em;
+  font-size: 1em;
+  padding-left: 2em;
+}
+
+.jal button {
+  display: inline-block;
+  background-color: #226556;
+  border: none;
+  width: 100%;
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.9em;
+  margin: 0.8em 0.4em;
+  border-radius: 0.6em;
+  padding: 0.4em;
+  padding-left: 2em;
+  margin-bottom: 0.2em;
+}
+.jal button:focus {
+  outline:none !important;}
+.jal p {
+  display: inline-block;
+  float: right;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 0px;
+  padding-right: 20px;
+  margin-right: 10px;
+}
+
+.jaDiv p {
+  float: left;
+  margin: auto;
+  font-size: 1em;
+  padding: 1.2em 0em 0em 2em;
+}

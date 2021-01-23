@@ -1,0 +1,130 @@
+<app-tool-nav></app-tool-nav>
+  <div class="row">
+    <div class="col-55">
+      <div class="stabPred">
+        <button>Back Analysis</button><br>
+        <button>Custom Analysis</button><br>
+      </div>
+    </div>
+    <div class="col-45">
+  
+        <h3>Case history data
+        </h3>
+        <div class="vl">
+        <p>Please fill the below fields. For stability graph factors, enter the modified factors.</p>
+        <form [formGroup]="shareForm">
+          <div class="row">
+            <div class="col-50">
+                <label for="mine">Underground mine</label>
+                <input type="text" id="mine" class="form-control" formControlName="mine">
+                <label for="method">Mining method</label>
+                <input type="text" id="method" class="form-control" formControlName="method">
+                <label for="factorA">Stress factor (A)</label>
+                <input type="number" id="factorA" class="form-control" formControlName="factorA">
+                <label for="factorC">Gravity factor (C)</label>
+                <input type="number" id="factorC" class="form-control" formControlName="factorC">
+                <label for="factorF">Fault factor (F)</label>
+                <input type="number" id="factorF" class="form-control" formControlName="factorF">
+                <label for="hr">Hydraulic Radius, m</label>
+                <input type="number" id="hr" class="form-control" formControlName="hr">
+            </div>
+  
+            <div class="col-50">
+                <label for="location">Mine location</label>
+                <input type="text" id="location" class="form-control" formControlName="location">
+                <label for="Qvalue">Q'-value</label>
+                <input type="number" id="Qvalue" class="form-control" formControlName="Qvalue">
+                <label for="factorB">Joint defect factor (B)</label>
+                <input type="number" id="factorB" class="form-control" formControlName="factorB">
+                <label for="factorT">Time factor (T)</label>
+                <input type="number" id="factorT" class="form-control" formControlName="factorT">
+                <label for="stopeSurface">Stope surface</label>
+                <select placeholder="Stope surface" >
+                  <option value="back">back</option>
+                  <option value="hangingwall">hangingwall</option>
+                  <option value="footwall">footwall</option>
+                  <option value="sidewall">sidewall</option>
+                </select>
+                <label for="stopeStability">Stope stability outcome</label>
+                <select placeholder="Stope stability outcome" >
+                  <option value="stable">stable</option>
+                  <option value="unstable">unstable</option>
+                  <option value="failure">failure</option>
+                </select>
+            </div>
+  
+          </div>
+          <button>Submit</button>
+        </form>
+      </div>
+
+    </div>
+  
+ 
+  </div>
+  
+  <!-- 
+    <div class="container">
+  <h1>Case history data</h1>
+  <p>Please fill the below fields. For stability graph factors, enter the modified factors.</p>
+ <form [formGroup]="shareForm">
+      <div class="cell">
+        <label>Underground mine</label>
+        <input class="form-control" formControlName="mine" type="text">
+        <label>Mine location</label>
+        <input class="form-control" formControlName="location" type="text">
+      </div>
+
+      <div class="cell">
+         <label>Mining method</label>
+         <input class="form-control" formControlName="method" type="text">
+         <label> Q' value</label>
+         <input class="form-control" formControlName="modifiedQvalue" type="number">
+      </div>
+
+      <div class="cell">
+         <label>Stress factor (A)</label>
+         <input class="form-control" formControlName="stressFactor" type="number">
+         <label>Joint defect factor (B)</label>
+         <input class="form-control" formControlName="jointdefectB" type="number">
+      </div>
+
+      <div class="cell">
+         <label>Gravity factor (C)</label>
+         <input class="form-control" formControlName="gravityFactor" type="number">
+         <label>Fault factor (F)</label>
+         <input class="form-control" formControlName="faultFactor" type="number">
+      </div>
+
+      <div class="cell">
+         <label>Time factor (T)</label>
+         <input class="form-control" formControlName="timeFactor" type="number">
+
+         <select placeholder="Stope surface" >
+         <option value="back">back</option>
+         <option value="hangingwall">hangingwall</option>
+         <option value="footwall">footwall</option>
+         <option value="sidewall">sidewall</option>
+       </select>
+      </div>
+
+      <div class="cell">
+         <label>Hydraulic radius (HR)</label>
+         <input class="form-control" formControlName="hydraulicRadius" type="number">
+
+        <select placeholder="Stope stability outcome" >
+        <option value="stable">stable</option>
+        <option value="unstable">unstable</option>
+        <option value="failure">failure</option>
+      </select>
+     <br/>
+      </div>
+      
+ <button>Submit</button>
+ </form>
+</div>
+-->
+
+<div class="back">
+  <button class="nav-item nav-link-edit" routerLink="/outcome">&laquo;  Back</button>
+</div>

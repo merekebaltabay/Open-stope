@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Calculate RQD</h1>
+<div mat-dialog-content>
+  <p>Analyze the core sample and Sum all rock pieces equal to or greater than 100 mm. Enter the sum of rock pieces and total length of the core sample.</p>
+
+  <img src="assets/img/core.png" alt="Core sample" style="width:100%">
+  <div class="core">
+    <div class="cell">
+      <label for="coreL">Sum of rock pieces' length>100 mm</label>
+      <input matInput [(ngModel)]="data.coreL" type="number" placeholder="Sum of length in mm" class="form-control">
+    </div>
+    <div class="cell">
+      <label>Total length of core sample</label>
+      <input matInput [(ngModel)]="data.totalL" type="number" placeholder="Total length in mm" class="form-control">
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data.coreL" cdkFocusInitial>Continue</button>
+  </div>
+</div>

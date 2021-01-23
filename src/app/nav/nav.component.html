@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+   <div class="logo">
+  
+    <a routerLink="/"><img src="assets/img/logo.png" alt="logo" style="width:14%; margin:0; margin-left: 1em;">Open Stope Design</a>
+  
+   </div>
+
+   <nav>
+     <ul>
+       <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ homeTitle }}</a></li>
+       <li class="nav-item"><a routerLink="/about" routerLinkActive="active">{{ aboutTitle }}</a></li>
+       <li class="nav-item"><a routerLink="/contact" routerLinkActive="active">{{ contactTitle }}</a></li>
+     </ul>
+   </nav>
+   </div>
+</header>

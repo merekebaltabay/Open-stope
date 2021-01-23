@@ -1,0 +1,115 @@
+h3 {
+  margin-top: 0.5em;
+  color: black;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0.5em;
+}
+
+.col-50 {
+  flex: 50%;
+}
+.col-45 {
+  -ms-flex: 45%; /* IE10 */
+  flex: 45%;
+  height: 100%;
+}
+.col-55 {
+  -ms-flex: 55%; /* IE10 */
+  flex: 55%;
+}
+
+
+.container {
+  background-color: #f2f2f2;
+}
+
+input, select {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 25px;
+  display: block;
+  box-shadow: none !important;
+  
+}
+
+label {
+  margin-bottom: 4px;
+  margin-left: 3em;
+  display: block;
+
+}
+
+.vl {
+  border-left: 3px solid rgb(109, 108, 108);
+  border-left: groove;
+  height: 100%;
+  position: relative;
+  margin-left: -3px;
+  top: 0;
+}
+
+button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.2em;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  margin: auto;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+button:focus {
+  outline:none !important;}
+.stabPred button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.4em 0.4em;
+  text-align: center;
+  text-decoration: none;
+  width: 30%;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  margin-top:2em;
+  margin-left:10em;
+  resize: vertical;
+}
+.stabPred  button:focus {
+  outline:none !important;}
+
+.back button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.4em;
+  width: 7%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+}
+.back button:focus {
+  outline:none !important;}

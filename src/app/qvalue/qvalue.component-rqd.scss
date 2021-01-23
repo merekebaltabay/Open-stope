@@ -1,0 +1,77 @@
+// @Date:   2019-03-28T21:01:32+06:00
+// @Last modified time: 2019-04-20T19:58:47+06:00
+
+.mat-dialog-content {
+  overflow: hidden !important;
+  height: 16em !important;
+}
+
+img {
+  padding: 0.3em;
+}
+
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 0.6em;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.6em;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0em;
+}
+
+p {
+  text-align: center;
+  margin-top: 0em;
+}
+
+.core {
+  display: table;
+  margin: auto;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0em 2em;
+}
+
+label {
+  width: 150%;
+  margin-top: 0.4em;
+  text-decoration:solid;
+}
+
+input, select {
+  width: 110%;
+  border:solid 0.1em;
+  color: gray;
+  box-shadow: none !important;
+  outline: gray;
+}
+
+button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.3em;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  border-radius: 0.5em;
+  margin: auto;
+  margin-top: 1em;
+}
+button:focus {
+  outline:none !important;}

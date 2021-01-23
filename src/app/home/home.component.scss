@@ -1,0 +1,27 @@
+.welcome {
+  margin: 0 auto;
+}
+
+h1 {
+  margin: auto;
+  font-size: 1.4em;
+  text-align: center;
+  color: #333;
+  font-family: Arial, Helvetica;
+  margin-top: 7%;
+  line-height: 1.5;
+}
+
+button {
+  background: #226556;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 2%;
+  padding: 0.4em 0.8em;
+  position: relative;
+  left: 45%;
+  border-radius: 6px;
+}
+button:focus {
+  outline:none !important;}

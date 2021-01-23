@@ -1,0 +1,57 @@
+<app-tool-nav></app-tool-nav>
+
+<h4>A, B, C, F and T factors calculation</h4>
+<form name="factorsForm" #factorsForm="ngForm">
+<div class="form-group">
+<label for="ucs">Intact rock UCS</label>
+<input type="number" appMaxUcs="500" appMinUcs="1" id="ucs" placeholder="Uniaxial compressive strength in MPa"
+class="form-control" required ngModel name="ucs" #ucs="ngModel">
+<div *ngIf="ucs.invalid && (ucs.dirty || ucs.touched)" class="text-danger">
+  <div *ngIf="ucs.errors?.appMaxUcs">Enter a proper UCS.</div>
+  <div *ngIf="ucs.errors?.appMinUcs">Enter a proper UCS.</div>
+</div>
+</div>
+<div class="form-group">
+<label for="diffDip">Difference in Dip</label>
+<input type="number" appMaxDipDiff="90" appMinDipDiff="0" id="diffDip" placeholder="in degrees"
+class="form-control" required ngModel name="diffDip" #diffDip="ngModel">
+<div *ngIf="diffDip.invalid && (diffDip.dirty || diffDip.touched)" class="text-danger">
+  <div *ngIf="diffDip.errors?.appMaxDipDiff">Enter a proper difference in dip.</div>
+  <div *ngIf="diffDip.errors?.appMinDipDiff">Enter a proper difference in dip.</div>
+</div>
+</div>
+<div class="form-group">
+
+<label for="stopeDip">Stope Dip</label>
+<input type="number" appMaxStopeDip="90" appMinStopeDip="0" id="stope.Dip" placeholder="Enter stope dip"
+class="form-control" required ngModel name="stopeDip" #stopeDip="ngModel">
+<div *ngIf="stopeDip.invalid && (stopeDip.dirty || stopeDip.touched)" class="text-danger">
+  <div *ngIf="stopeDip.errors?.appMaxStopeDip">Enter a proper stope dip.</div>
+  <div *ngIf="stopeDip.errors?.appMinStopeDip">Enter a proper stope dip.</div>
+</div>
+</div>
+<div class="form-group">
+ <label>Stope exposure time</label>
+  <select matNativeControl required name="time" id="time" #time (change)="selectChangeHandler($event)"> 
+    <option value="" selected>Choose a standing time</option>
+    <option value="3month">3 months</option>
+    <option value="35month">3-5 months</option>
+    <option value="512month">5-12 months</option>
+    <option value="12month"> 12 months</option>
+  </select>
+</div>
+
+<div class="fault">
+<button for="faultAngle">Fault Factor estimation</button>
+</div>
+
+
+
+<div class="calc">
+  <button [disabled]="factorsForm.invalid" (click)="CalcFactors(ucs.value, diffDip.value, stopeDip.value);">Calculate</button>
+</div>
+</form>
+<div class="back">
+  <button class="nav-item nav-link-edit" routerLink="/stress/stress-res">&laquo;  Back</button>
+</div>
+<router-outlet></router-outlet> 

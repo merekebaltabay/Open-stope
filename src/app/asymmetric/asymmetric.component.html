@@ -1,0 +1,78 @@
+<label for="stopeHeight">Stope height</label>
+<input type="number" id="stopeHeight" placeholder="Stope height in m"
+       required class="form-control" name="stopeHeight" #stopeHeight>
+
+<label for="sideTopWidth">Sidewall top width</label>
+<input type="number" id="sideTopWidth" placeholder="Sidewall top width in m"
+       required class="form-control" name="sideTopWidth" #sideTopWidth>
+
+<label for="sideBottomWidth">Sidewall bottom width</label>
+<input type="number" id="sideBottomWidth" placeholder="Sidewall bottom width in m"
+       required class="form-control" name="sideBottomWidth" #sideBottomWidth>
+
+<label for="sideLength">Sidewall length</label>
+<input type="number" id="sideLength" placeholder="Sidewall length in m"
+       required class="form-control" name="sideLength" #sideLength>
+
+<label for="fhWidth">FW and HW width</label>
+<input type="number" id="fhWidth" placeholder="FW & HW width in m"
+       required class="form-control" name="fhWidth" #fhWidth>
+
+<div class="calc">
+  <button (click)="isShow =!isShow; unsymmetric(stopeHeight.value, sideTopWidth.value, sideBottomWidth.value, sideLength.value, fhWidth.value)">Calculate</button>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="results" *ngIf=" isShow">
+  <div id="wrapper">
+    <div id="box-area">
+      <div class="box" id="front">Hangingwall</div>
+      <div class="box" id="back">Footwall</div>
+      <div class="box" id="top">Stope Back</div>
+      <div class="box" id="bottom">Bottom</div>
+      <div class="box" id="left">Sidewall</div>
+      <div class="box" id="right">Sidewall</div>
+    </div>
+  </div>
+
+  <h4>Stope Volume <span style="float:right;color:#226556;">{{volume}} m<sup>3</sup></span></h4>
+  <table>
+    <tr>
+      <th></th>
+      <th>Stope Back</th>
+      <th>Hangingwall</th>
+      <th>Footwall</th>
+      <th style="border-right:none;">Sidewall</th>
+    </tr>
+
+    <tr id="hr">
+      <td style="padding-right:0.5em;">S Factor</td>
+      <td>{{hrCrown}} m</td>
+      <td>{{hrHang}} m</td>
+      <td>{{hrFoot}} m</td>
+      <td style="border-right:none;">{{hrSide}} m</td>
+    </tr>
+
+    <tr>
+      <td style="padding-right:0.5em;">Area</td>
+      <td>{{crownA}} m<sup>2</sup></td>
+      <td>{{hangA}} m<sup>2</sup></td>
+      <td>{{footA}} m<sup>2</sup></td>
+      <td style="border-right:none;">{{sideA}} m<sup>2</sup></td>
+    </tr>
+
+    <tr>
+      <td style="padding-right:0.5em;">Perimeter</td>
+      <td>{{crownP}} m&nbsp;</td>
+      <td>{{hangP}} m&nbsp;</td>
+      <td>{{footP}} m&nbsp;</td>
+      <td style="border-right:none;">{{sideP}} m&nbsp;</td>
+    </tr>
+
+  </table>
+
+  <div class="next">
+    <button class="nav-item nav-link-edit" routerLink="/qvalue">Next &raquo;</button>
+  </div>
+</div>

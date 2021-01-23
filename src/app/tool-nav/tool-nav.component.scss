@@ -1,0 +1,26 @@
+#pills-tab {
+  background-color: #333;
+  text-align: center;
+
+  .nav-link {
+    color: white;
+
+    i {
+      padding-right: 0.3em;
+    }
+
+    &:hover {
+      background: #226556;
+      text-decoration: none;
+      color: white;
+      border-radius: 0;
+    }
+  }
+
+  .active {
+    background: #226556;
+    text-decoration: none;
+    color: white;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,62 @@
+<app-tool-nav></app-tool-nav>
+<h4>Open Stope Stability Results</h4>
+
+<div class="results">
+
+  <h6 style="margin-bottom:0;">Stope back</h6>
+  <p style="font-size:1.5em;font-weight:bold; margin-top:0"><span style="float:left;color:#226556;padding-left:4em;">12.4</span><span style="float:left;color:#FFA500;padding-left:2em;">68.5</span><span style="float:left;color:#CC0000;padding-left:2em;">19.1</span></p><br>
+
+  <p style="font-size: 1em;"><span style="float:left;margin-left: 6em;">Stable</span><span style="float:left;margin-left:3em;">Unstable</span><span style="float:left;margin-left:3em;">Failure</span></p><br>
+
+  <h6 style="margin-top:0.4em;margin-bottom:0;">Footwall</h6>
+  <p style="font-size:1.5em;font-weight:bold;"><span style="float:left;color:#226556;padding-left:4em;">95.0</span><span style="float:left;color:#FFA500;padding-left:2.2em;">5.0</span><span style="float:left;color:#CC0000;padding-left:2.6em;">0.0</span></p><br>
+  <p style="font-size: 1em;"><span style="float:left;margin-left: 6em;">Stable</span><span style="float:left;margin-left:3em;">Unstable</span><span style="float:left;margin-left:3em;">Failure</span></p><br>
+
+  <h6 style="margin-top:0.4em;margin-bottom:0;">Hangingwall</h6>
+  <p style="font-size:1.5em;font-weight:bold;"><span style="float:left;color:#226556;padding-left:4em;">95.0</span><span style="float:left;color:#FFA500;padding-left:2.2em;">5.0</span><span style="float:left;color:#CC0000;padding-left:2.6em;">0.0</span></p><br>
+  <p style="font-size: 1em;"><span style="float:left;margin-left: 6em;">Stable</span><span style="float:left;margin-left:3em;">Unstable</span><span style="float:left;margin-left:3em;">Failure</span></p><br>
+
+  <h6 style="margin-top:0.4em;margin-bottom:0;">Sidewall</h6>
+  <p style="font-size:1.5em;font-weight:bold;"><span style="float:left;color:#226556;padding-left:4em;">95.0</span><span style="float:left;color:#FFA500;padding-left:2.2em;">5.0</span><span style="float:left;color:#CC0000;padding-left:2.6em;">0.0</span></p><br>
+  <p style="font-size: 1em;"><span style="float:left;margin-left: 6em;">Stable</span><span style="float:left;margin-left:3em;">Unstable</span><span style="float:left;margin-left:3em;">Failure</span></p><br>
+
+</div>
+
+<div class="tab">
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label="Recommended">The Refined Stability Graph
+    <canvas baseChart
+            [datasets]="refinedChartData"
+            [options]="scatterChartOptions"
+            [legend]="scatterChartLegend"
+            [colors]="aChartColors">
+    </canvas>
+  </mat-tab>
+  <mat-tab label="Modified">The Potvon's Stability Graph  
+    <canvas baseChart
+    [datasets]="modifiedChartData"
+    [options]="modifiedChartOptions"
+    [legend]="scatterChartLegend"
+    [colors]="aChartColors">
+</canvas>
+</mat-tab>
+  <mat-tab label="Extended">The Extended Stability Graph after Trueman&Mawdesley (2003)    
+    <canvas baseChart
+    [datasets]="extendedChartData"
+    [options]="extendedChartOptions"
+    [legend]="scatterChartLegend"
+    [colors]="aChartColors">
+</canvas>
+</mat-tab>
+</mat-tab-group>
+</div>
+
+<div class="back">
+  <button class="nav-item nav-link-edit" routerLink="/factors/factors-res">&laquo;  Back</button>
+</div>
+
+<div class="next">
+  <button class="nav-item nav-link-edit" routerLink="/outcome">See all calculations &raquo;</button>
+</div>
+
+

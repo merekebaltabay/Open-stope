@@ -1,0 +1,78 @@
+h4 {
+  font-size: 1.4em;
+  padding-top: 1.5em;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.calc button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.4em;
+  width: 10%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  display: block;
+  margin-left: 22%;
+}
+.calc button:focus {
+  outline:none !important;}
+
+input[type=number], select, textarea {
+  border-color: #3a3a3a;
+  color: black;
+  display: inline;
+  border-radius: 0.5em;
+  font-size: 1em;
+  box-shadow: none !important;
+}
+
+label {
+  text-align: left;
+  display: block;
+  font-size: 1em;
+  color: black;
+  margin-top: 0.7em;
+}
+
+.back button {
+  background-color: #226556;
+  border: none;
+  color: white;
+  padding: 0.4em;
+  width: 7%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  display: block;
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+}
+.back button:focus {
+  outline:none !important;}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 0.2em;
+  width: 30%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+  margin-top: 2em;
+  display: block;
+  margin-left: 10.5em; 
+  box-shadow: none !important;
+}
+.text-danger {
+  position: fixed;
+  font-size: smaller;
+}
