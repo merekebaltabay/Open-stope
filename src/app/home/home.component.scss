@@ -1,15 +1,17 @@
 .welcome {
   margin: 0 auto;
+  color: white;
 }
 
 h1 {
   margin: auto;
   font-size: 1.4em;
   text-align: center;
-  color: #333;
+  color:white;
   font-family: Arial, Helvetica;
-  margin-top: 7%;
+  margin-top: 10%;
   line-height: 1.5;
+
 }
 
 button {
@@ -25,3 +27,20 @@ button {
 }
 button:focus {
   outline:none !important;}
+  .bg {
+    /* The image used */
+    background-image: url("stope2.jpg");
+  margin: 0;
+  padding: 0;
+  position: fixed;
+top: 7.5%;
+left: 0%;
+width: 100%;
+height: 100%;
+    /* Full height */
+   
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

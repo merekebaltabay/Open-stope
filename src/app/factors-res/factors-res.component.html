@@ -1,7 +1,7 @@
 <div class="results">
 
     <div id="aFactor">
-      <h4>Factor A</h4>
+      <h4 style="text-align:center; padding-bottom:0; margin-bottom:0">Factor A</h4>
       <canvas baseChart
               [datasets]="barChartDataA"
               [labels]="barChartLabels"
@@ -14,7 +14,7 @@
     </div>
   
     <div id="bFactor" style="display: block;">
-      <h4>Factor B</h4>
+      <h4 style="text-align:center; padding-bottom:0; margin-bottom:0">Factor B</h4>
       <canvas baseChart
               [datasets]="barChartDataB"
               [labels]="barChartLabels"
@@ -27,7 +27,7 @@
     </div>
   
     <div id="cFactor" style="display: block;">
-      <h4>Factor C</h4>
+      <h4 style="text-align:center; padding-bottom:0; margin-bottom:0">Factor C</h4>
 
         <canvas baseChart
               [datasets]="barChartDataC"
@@ -40,8 +40,8 @@
       </canvas>
     </div>
   
-    <div id="fFactor" style="display: block;">
-      <h4>Factor F</h4>
+    <div id="stabNumber" style="display: block;">
+      <h4 style="text-align:center;padding-bottom:0; margin-bottom:0">Stability Number</h4>
   
       <canvas baseChart
               [datasets]="barChartDataF"
@@ -53,6 +53,7 @@
               [colors]="fChartColors">
       </canvas>
     </div>
+  <div id="time"><h4>Time Factor = {{timeFactor}}</h4></div>
   
     <div class="next">
       <button class="nav-item nav-link-edit" routerLink="/stability">predict stability &raquo;</button>

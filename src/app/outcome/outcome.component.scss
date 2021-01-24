@@ -6,17 +6,16 @@
   margin: 0.5em;
   overflow: auto !important;
 }
-.col-32 {
-  -ms-flex: 32%; /* IE10 */
-  flex: 32%;
+.col-30 {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
 }
-.col-36 {
-  -ms-flex: 36%; /* IE10 */
-  flex: 36%;
-
+.col-35 {
+  -ms-flex: 35%; /* IE10 */
+  flex: 35%;
 }
 .stressRes {
-  width: 36%;
+  width: 35%;
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -31,42 +30,43 @@
   padding: 1em;
 }
 .qval {
-  width: 32%;
+  width: 30%;
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   background-color:#FAFAFA;
   border-radius: 3px;
-  margin-right: 1em;
+  margin-left: 0.4em;
   position:fixed;
-  top: 79%;
+  top: 72%;
   padding: 0.4em;
+  margin-right: 1em;
 }
 .hr {
   background-color:#FAFAFA;
   border-radius: 3px;
-  margin-left: 0.8em;
+  margin-left: 0.4em;
   position:fixed;
-  top: 55%;
+  top: 50%;
   padding: 0.4em;
 }
 .stabGraph {
-  width: 32%;
+  width: 33%;
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
   background-color:#FAFAFA;
   border-radius: 3px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 1em;
   position:fixed;
   top: 15%;
-  padding: 0.4em;
+  padding: 0.2em;
+  text-justify: center;
 }
 .factors {
-  width: 36%;
+  width: 35%;
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -76,7 +76,7 @@
   border-radius: 3px;
   margin-left: 0.2em;
   position:fixed;
-  top: 40%;
+  top: 38%;
   padding: 0.2em;
 }
 .col-50 {
@@ -136,7 +136,7 @@ th, td {
   border-radius: 0.5em;
   display: block;
   position: fixed;
-  bottom: 5%;
+  bottom: 3%;
   right: 3%;
 }
 .next button:focus {
@@ -154,7 +154,7 @@ th, td {
   border-radius: 0.5em;
   display: block;
   position: fixed;
-  bottom: 5%;
+  bottom: 3%;
   right: 17%;
 }
 
@@ -170,7 +170,7 @@ th, td {
   border-radius: 0.5em;
   position: absolute;
   display: inline;
-  bottom: 5%;
+  bottom: 3%;
   left: 5%;
 }
 .back button:focus {
@@ -178,7 +178,7 @@ th, td {
 
 #wrapper {
   position: fixed;
-  top:20%;
+  top:15%;
   left:15%;
 width: 40px;
 height: 90px;

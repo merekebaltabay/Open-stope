@@ -33,34 +33,21 @@ export class StressComponent implements OnInit {
   public enableModulus: boolean;
   public enableVertStress: boolean;
   public enableHorStress: boolean;
-  stressForm = new FormGroup({
-    depth: new FormControl(),
-    modulus: new FormControl(),
-    vertStr: new FormControl(),
-    horStr: new FormControl()
-  });  
   
-  
-  constructor(private router: Router, private route: ActivatedRoute, private service: ForAllService, 
-    private fb: FormBuilder) {this.createForm();
+  constructor(private router: Router, private route: ActivatedRoute, private service: ForAllService) {
     }
-    createForm() {
-     this.stressForm = this.fb.group({
-    depth: '',
-    modulus: '', 
-    vertStr: '', 
-    horStr:''
-  }); 
+    option1(){
+      this.enableHorStress=true;
+      this.enableVertStress=true;
+      this.enableDepth=false;
+      this.enableModulus=false;
     }
-  
-  set isDisabled(selectedIndex:number) {
-    this.isDisabled = selectedIndex;
-    if(this.selectedIndex = 1) {
-     this.stressForm.controls['modulus'].disable();
-    } else {
-       this.stressForm.controls['modulus'].enable();
-     }
-   }
+    option2(){
+    this.enableHorStress=false;
+    this.enableVertStress=false;
+    this.enableDepth=true;
+    this.enableModulus=true;
+  }
   enableDisableRule(selectedIndex:number){
     if(this.selectedIndex = 1){
        this.selectedIndex = selectedIndex;
@@ -69,7 +56,6 @@ export class StressComponent implements OnInit {
     }
  }
  
-
   calcStress(depth:number, modulus:number, vertStr: number, horStr:number) {
       this.router.navigate(['stress-res'], {relativeTo: this.route});
 
@@ -167,6 +153,10 @@ export class StressComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedIndex=1;
+    this.enableDepth=false;
+    this.enableModulus=false;;
+    this.enableVertStress=true;
+    this.enableHorStress=true;
     this.service.currentStopeHeight.subscribe(stopeHeight => this.stopeHeight = stopeHeight);
     this.service.currentSideWidth.subscribe(sideWidth => this.sideWidth = sideWidth);
     this.service.currentFhWidth.subscribe(fhWidth => this.fhWidth = fhWidth);

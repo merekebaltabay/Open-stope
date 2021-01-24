@@ -24,7 +24,7 @@
 
 <div class="tab">
 <mat-tab-group animationDuration="0ms">
-  <mat-tab label="Recommended">The Refined Stability Graph
+  <mat-tab label="Recommended" style="padding-left: 1em;"><h4 style="padding-top:0.5em; font-size: 1.2em;">The Refined Stability Graph</h4>
     <canvas baseChart
             [datasets]="refinedChartData"
             [options]="scatterChartOptions"
@@ -32,7 +32,8 @@
             [colors]="aChartColors">
     </canvas>
   </mat-tab>
-  <mat-tab label="Modified">The Potvon's Stability Graph  
+  <mat-tab label="Modified">
+    <h4 style="padding-top:0.5em; font-size: 1.2em;">The Potvon's Stability Graph</h4> 
     <canvas baseChart
     [datasets]="modifiedChartData"
     [options]="modifiedChartOptions"
@@ -40,7 +41,7 @@
     [colors]="aChartColors">
 </canvas>
 </mat-tab>
-  <mat-tab label="Extended">The Extended Stability Graph after Trueman&Mawdesley (2003)    
+  <mat-tab label="Extended"><h4 style=" padding-top:0.5em; font-size: 1.2em;">The Extended Stability Graph after Trueman&Mawdesley (2003)</h4>    
     <canvas baseChart
     [datasets]="extendedChartData"
     [options]="extendedChartOptions"

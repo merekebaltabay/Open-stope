@@ -2,13 +2,13 @@
 
 <h4>Stress Analysis</h4>
 <form name="stressForm" #stressForm="ngForm">
-<button (click)="enableDisableRule(1);"  
+<button (click)="enableDisableRule(1); option1();"  
  type="button" [style.background-color]="selectedIndex === 1 ? '#226556' : '#696969'" class="btn">Stope and Rock Parameters</button>
 <div class="form-group">
 <span style="display:inline-block;margin-left:11.5em; margin-right:1.5em;">
 <label for="depth">Excavation depth</label>
 <input type="number" appMaxDepth="10000" appMinDepth="1" id="depth" placeholder="Depth in m" class="form-control"
-       required ngModel name="depth" #depth="ngModel" [disabled]="isDisabled">
+       required ngModel name="depth" #depth="ngModel" [disabled]="enableDepth">
        <div *ngIf="depth.invalid && (depth.dirty || depth.touched)" class="text-danger">
               <div *ngIf="depth.errors?.appMinDepth">Enter a proper excavation depth.</div>
               <div *ngIf="depth.errors?.appMaxDepth">Enter a proper excavation depth.</div>
@@ -17,20 +17,20 @@
 <span style="display:inline-block; margin-right:0;">
 <label for="modulus">Elastic Modulus</label>
 <input type="number" appMaxModulus="100" appMinModulus="1" id="modulus" placeholder="Elastic Modulus in GPa"
-       class="form-control" required ngModel name="modulus" #modulus="ngModel" [disabled]="isDisabled">
+       class="form-control" required ngModel name="modulus" #modulus="ngModel" [disabled]="enableModulus">
        <div *ngIf="modulus.invalid && (modulus.dirty || modulus.touched)" class="text-danger">
               <div *ngIf="modulus.errors?.appMinModulus">Enter a proper elastic modulus.</div>
               <div *ngIf="modulus.errors?.appMaxModulus">Enter a proper elastic modulus.</div>
        </div>
 </span>
 </div>
-<button (click)="enableDisableRule(2);"
+<button (click)="enableDisableRule(2); option2();"
 type="button" [style.background-color]="selectedIndex === 2 ? '#226556' : '#696969'" class="btn">In-situ stresses</button>
 <div class="form-group">
 <span style="display:inline-block;margin-left: 11.5em;margin-right:1.5em;">
 <label for="vertStress">Vertical stress</label>
 <input type="number" appMinVertStress="0.01" id="vertStr" placeholder="Vertical Stress in MPa"
-       class="form-control" required ngModel name="vertStr" #vertStr="ngModel" [attr.disabled]="enableDisableRule(1)">
+       class="form-control" required ngModel name="vertStr" #vertStr="ngModel" [disabled]="enableVertStress">
        <div *ngIf="vertStr.invalid && (vertStr.dirty || vertStr.touched)" class="text-danger">
               <div *ngIf="vertStr.errors?.appMinVertStress">Enter a proper vertical stress.</div>
        </div>
@@ -38,7 +38,7 @@ type="button" [style.background-color]="selectedIndex === 2 ? '#226556' : '#6969
 <span style="display:inline-block;">
 <label for="horStress">Horizontal stress</label>
 <input type="number" appMinHorStress="0.01" id="horStr" placeholder="Horizontal Stress in MPa"
-      class="form-control" required ngModel name="horStr" #horStr="ngModel" [disabled]="enableDisableRule(1)">
+      class="form-control" required ngModel name="horStr" #horStr="ngModel" [disabled]="enableHorStress">
       <div *ngIf="horStr.invalid && (horStr.dirty || horStr.touched)" class="text-danger">
        <div *ngIf="horStr.errors?.appMinHorStress">Enter a proper horizontal stress.</div>
 </div>

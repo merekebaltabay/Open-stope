@@ -19,7 +19,8 @@ export class QvalueComponent implements OnInit {
   public jointRoughness: number;
   public jointAlteration: number;
   public qRes: number;
-
+  public qQuality: string;
+  public rqdQuality: string;
   public coreL: number;
   public totalL: number;
   public description: string;
@@ -81,6 +82,52 @@ export class QvalueComponent implements OnInit {
     this.qRes = (rqd / jointSet * jointRoughness / jointAlteration);
     this.qRes = Math.round(this.qRes * 1e2) / 1e2;
     this.service.changeQRes(this.qRes);
+
+    if(0.001 < this.qRes && this.qRes <=0.01){
+     this.qQuality = 'exceptionally poor';
+     this.service.changeQQuality(this.qQuality);
+    } else if (0.01 < this.qRes && this.qRes <=0.5) {
+      this.qQuality = 'extremely poor';
+      this.service.changeQQuality(this.qQuality);
+    } else if (0.5 < this.qRes && this.qRes <=1) {
+      this.qQuality = 'very poor';
+      this.service.changeQQuality(this.qQuality);
+    } else if (1 < this.qRes && this.qRes <=4) {
+      this.qQuality = 'poor';
+      this.service.changeQQuality(this.qQuality);
+    } else if (4 < this.qRes && this.qRes <=10){
+      this.qQuality = 'fair';
+      this.service.changeQQuality(this.qQuality);
+    } else if (10 < this.qRes && this.qRes <=40){
+      this.qQuality = 'good';
+      this.service.changeQQuality(this.qQuality);
+    } else if (40 < this.qRes && this.qRes <=100){
+      this.qQuality = 'very good';
+      this.service.changeQQuality(this.qQuality);
+    } else if (100 < this.qRes && this.qRes <=1000){
+      this.qQuality = 'extremely good';
+      this.service.changeQQuality(this.qQuality);
+    } else {
+      this.qQuality = 'Check modified Q value';
+      this.service.changeQQuality(this.qQuality);
+    }
+
+    if(0 < this.rqd && this.rqd <=25){
+      this.rqdQuality = 'very poor';
+      this.service.changeRqdQuality(this.rqdQuality);
+     } else if (25 < this.rqd && this.rqd <=50) {
+       this.rqdQuality = 'poor';
+       this.service.changeRqdQuality(this.rqdQuality);
+     } else if (50 < this.rqd && this.rqd <=75) {
+       this.rqdQuality = 'fair';
+       this.service.changeRqdQuality(this.rqdQuality);
+     } else if (75 < this.rqd && this.rqd <=100) {
+       this.rqdQuality = 'good';
+       this.service.changeRqdQuality(this.rqdQuality);
+     } else {
+      this.rqdQuality = 'Check RQD value';
+      this.service.changeRqdQuality(this.rqdQuality);
+     }
   }
   ngOnInit(): void {
   }

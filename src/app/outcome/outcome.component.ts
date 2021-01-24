@@ -75,6 +75,7 @@ export class OutcomeComponent implements OnInit {
   
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    aspectRatio:1.5,
     scales: {
       gridLines: {display:true,
       drawBorder:true,

@@ -27,6 +27,7 @@ export class StabilityComponent implements OnInit {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
+    aspectRatio:1.8,
     scales: {
       gridLines: {display:true,
       drawBorder:true,
@@ -68,6 +69,7 @@ export class StabilityComponent implements OnInit {
 
   public extendedChartOptions: ChartOptions = {
     responsive: true,
+    aspectRatio:1.8,
     scales: {
       gridLines: {display:true,
       drawBorder:true,
@@ -108,6 +110,7 @@ export class StabilityComponent implements OnInit {
 
 public modifiedChartOptions: ChartOptions = {
   responsive: true,
+  aspectRatio:1.8,
   scales: {
     gridLines: {display:true,
     drawBorder:true,

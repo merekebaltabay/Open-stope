@@ -166,6 +166,13 @@ export class ForAllService {
 
   public timeSource = new BehaviorSubject<string>('');
   currentTime = this.timeSource.asObservable();
+
+  public qQualitySource = new BehaviorSubject<string>('');
+  currentQQuality = this.qQualitySource.asObservable();
+
+  public rqdQualitySource = new BehaviorSubject<string>('');
+  currentRqdQuality = this.rqdQualitySource.asObservable();
+
   constructor() { }
 
   changeDepth(depth: number) {
@@ -329,5 +336,11 @@ export class ForAllService {
   }
   changeTime(time:string) {
     this.timeSource.next(time);
+  }
+  changeQQuality(qQuality:string) {
+    this.qQualitySource.next(qQuality);
+  }
+  changeRqdQuality(rqdQuality:string) {
+    this.rqdQualitySource.next(rqdQuality);
   }
 }
