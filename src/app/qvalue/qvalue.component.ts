@@ -1,7 +1,8 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit,Inject, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 import { ForAllService } from '../for-all.service';
+import { EventEmitter } from 'events';
 
 export interface DialogData {
   coreL: number;
@@ -24,6 +25,7 @@ export class QvalueComponent implements OnInit {
   public coreL: number;
   public totalL: number;
   public description: string;
+  public sendValue: number;
 
   constructor(private router: Router, private route: ActivatedRoute, public dialog: MatDialog, private service: ForAllService) { }
 
@@ -39,39 +41,36 @@ export class QvalueComponent implements OnInit {
       this.rqd = result.data;
     });
   }
-
+  massive(){
+        this.jointSet=0.75;
+  }
   openModal2(): void {
     const dialogRef = this.dialog.open(QvalueComponentSets, {
       width: '45%',
-      data: { coreL: this.coreL, totalL: this.totalL }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.coreL = result;
+      this.jointSet=result.data;
     });
   }
 
   openModal3(): void {
     const dialogRef = this.dialog.open(QvalueComponentRoughness, {
       width: '45%',
-      data: { coreL: this.coreL, totalL: this.totalL }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.coreL = result;
     });
   }
   openModal4(): void {
     const dialogRef = this.dialog.open(QvalueComponentAlteration, {
       width: '60%',
-      data: { coreL: this.coreL, totalL: this.totalL }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.coreL = result;
     });
   }
 
@@ -152,11 +151,17 @@ export class QvalueComponentRqd {
   templateUrl: './qvalue.component-sets.html',
   styleUrls: ['./qvalue.component-sets.scss']
 })
-export class QvalueComponentSets {
 
+export class QvalueComponentSets {
+  public js1:number;
+  @Output() onAdd = new EventEmitter();
   constructor(
     public dialogRef: MatDialogRef<QvalueComponentSets>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+    onClick() {
+      const data1=0.75;
+      
+  }
 }
 // Modal 3 - Joint Roughness
 @Component({

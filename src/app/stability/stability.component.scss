@@ -66,22 +66,50 @@ h6 {
 .tab {
   position: fixed;
   overflow: hidden;
-  top: 15%;
-  right: 8%;
+  top: 10%;
+  right: 7%;
   width: 50%;
-  height: 150%;
+  height: 40%;
   border: none;
   background-color: #fff;
-  padding: 0.6em 1em;
+  padding: 0.2em 0.5em;
   margin-left: 2em;
   margin-top: 2em;
   text-align: center;
+  font-size: 0.8em;
   color: #474747;
   }
-
+  
+.tab2 {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  right: 18%;
+  width: 35%;
+  height: 40%;
+  border: none;
+  background-color: #fff;
+  padding: 0.2em 0.5em;
+  margin-left: 2em;
+  margin-top: 2em;
+  text-align: center;
+  font-size: 0.8em;
+  color: #474747;
+  }
+  .tab2 ::ng-deep .mat-tab-label {
+    min-width: 0!important;
+    padding: 10px!important;
+    margin: 3px!important;
+  }
+ 
   ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
-    background-color:#226556 !important;
+    background-color:#226556!important;
 }
 ::ng-deep .mat-tab-labels {
+  font-size: 3px;
   justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 33px!important;
 }
+

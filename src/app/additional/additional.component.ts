@@ -21,10 +21,13 @@ export class AdditionalComponent implements OnInit {
     hr: new FormControl()
   });
   
+  public method: string;
   constructor(private formBuilder: FormBuilder) {
     this.createForm();
-
    }
+   selectChangeHandler (event: any) {
+    this.method = event.target.value;
+  }
    createForm() {
     this.shareForm = this.formBuilder.group({
       mine:'', 

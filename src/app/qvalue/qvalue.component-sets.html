@@ -2,7 +2,7 @@
 <div mat-dialog-content>
   <div mat-dialog-actions>
     <div class="jn">
-      <button mat-button [mat-dialog-close]="" cdkFocusInitial>A. Massive, no or few joints <p>&#x2223; 0.75</p></button>
+      <button mat-button (click)="onClick()" sendValue = "0.75" [mat-dialog-close]="" cdkFocusInitial>A. Massive, no or few joints <p>&#x2223; 0.75</p></button>
       <button mat-button [mat-dialog-close]="" cdkFocusInitial>B. One joint set <p>&#x2223; 2.0&nbsp;&nbsp;</p></button>
       <button mat-button [mat-dialog-close]="" cdkFocusInitial>C. One joint set plus random joints <p>&#x2223; 3.0&nbsp;&nbsp;</p></button>
       <button mat-button [mat-dialog-close]="" cdkFocusInitial>D. Two joint sets <p>&#x2223; 4.0&nbsp;&nbsp;</p></button>

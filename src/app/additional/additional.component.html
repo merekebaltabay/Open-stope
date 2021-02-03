@@ -18,8 +18,14 @@
                 <label for="mine">Underground mine</label>
                 <input type="text" id="mine" class="form-control" formControlName="mine">
                 <label for="method">Mining method</label>
-                <input type="text" id="method" class="form-control" formControlName="method">
-                <label for="factorA">Stress factor (A)</label>
+                <select matNativeControl required name="method" id="method" #method (change)="selectChangeHandler($event)">
+                  <option value="" selected>Choose a mining method</option>
+                  <option value="3month">3 months</option>
+                  <option value="35month">3-5 months</option>
+                  <option value="512month">5-12 months</option>
+                  <option value="12month"> 12 months</option>                
+                  <label for="factorA">Stress factor (A)</label>
+            </select>
                 <input type="number" id="factorA" class="form-control" formControlName="factorA">
                 <label for="factorC">Gravity factor (C)</label>
                 <input type="number" id="factorC" class="form-control" formControlName="factorC">

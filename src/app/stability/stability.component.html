@@ -1,6 +1,4 @@
 <app-tool-nav></app-tool-nav>
-<h4>Open Stope Stability Results</h4>
-
 <div class="results">
 
   <h6 style="margin-bottom:0;">Stope back</h6>
@@ -24,8 +22,9 @@
 
 <div class="tab">
 <mat-tab-group animationDuration="0ms">
-  <mat-tab label="Recommended" style="padding-left: 1em;"><h4 style="padding-top:0.5em; font-size: 1.2em;">The Refined Stability Graph</h4>
-    <canvas baseChart
+  <mat-tab label="Recommended" style="padding-left: 1em;">
+    <h4 style="padding-top:0.5em; font-size: 1.2em;">The Refined Stability Graph</h4>
+    <canvas width="55%" height="16%" baseChart
             [datasets]="refinedChartData"
             [options]="scatterChartOptions"
             [legend]="scatterChartLegend"
@@ -33,7 +32,7 @@
     </canvas>
   </mat-tab>
   <mat-tab label="Modified">
-    <h4 style="padding-top:0.5em; font-size: 1.2em;">The Potvon's Stability Graph</h4> 
+    <h4 style="padding-top:0.5em; font-size: 1.2em;">The Potvin's Stability Graph</h4> 
     <canvas baseChart
     [datasets]="modifiedChartData"
     [options]="modifiedChartOptions"
@@ -47,6 +46,52 @@
     [options]="extendedChartOptions"
     [legend]="scatterChartLegend"
     [colors]="aChartColors">
+</canvas>
+</mat-tab>
+</mat-tab-group>
+</div>
+
+<div class="tab2">
+<mat-tab-group animationDuration="0ms">
+  <mat-tab label="Crown" style="padding-left: 1em;">
+    <canvas baseChart
+            [datasets]="crownChartData"
+            [labels]="crownChartLabels"
+            [options]="sensitivityChartOptions"
+            [legend]="sensitivityChartLegend"
+            [chartType]="sensitivityChartType"
+            [colors]="sensitivityChartColors"
+            >
+    </canvas>
+  </mat-tab>
+  <mat-tab label="HW&FW">
+    <canvas baseChart
+    [datasets]="fhwChartData"
+    [labels]="fhwChartLabels"
+    [options]="sensitivityChartOptions"
+    [legend]="sensitivityChartLegend"
+    [chartType]="sensitivityChartType"
+    [colors]="sensitivityChartColors">
+</canvas>
+</mat-tab>
+  <mat-tab label="Sidewall"> 
+    <canvas baseChart
+    [datasets]="sideChartData"
+    [labels]="sideChartLabels"
+    [options]="sensitivityChartOptions"
+    [legend]="sensitivityChartLegend"
+    [chartType]="sensitivityChartType"
+    [colors]="sensitivityChartColors">
+</canvas>
+</mat-tab>
+<mat-tab label="Back"> 
+  <canvas baseChart
+  [datasets]="backChartData"
+    [labels]="backChartLabels"
+    [options]="sensitivityChartOptions"
+    [legend]="sensitivityChartLegend"
+    [chartType]="sensitivityChartType"
+    [colors]="sensitivityChartColors">
 </canvas>
 </mat-tab>
 </mat-tab-group>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ForAllService } from '../for-all.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
@@ -9,6 +9,7 @@ import { Label, Color } from 'ng2-charts';
   templateUrl: './stability.component.html',
   styleUrls: ['./stability.component.scss']
 })
+
 export class StabilityComponent implements OnInit {
   public hrCrown: number;
   public hrFoot: number;
@@ -27,7 +28,7 @@ export class StabilityComponent implements OnInit {
 
   public scatterChartOptions: ChartOptions = {
     responsive: true,
-    aspectRatio:1.8,
+    aspectRatio:1,
     scales: {
       gridLines: {display:true,
       drawBorder:true,
@@ -63,6 +64,9 @@ export class StabilityComponent implements OnInit {
         fontColor: 'black'
       }
     }]
+  },
+  legend:{
+    position:'right'
   }
   };  
   public scatterChartLegend = true;
@@ -149,14 +153,67 @@ public modifiedChartOptions: ChartOptions = {
   }]
 }
 }; 
+public sensitivityChartOptions: ChartOptions = {
+  responsive: true,
+  aspectRatio:2,
+  scales: {
+    xAxes:[{ 
+    scaleLabel: {
+      display: true,
+      labelString:"Hydraulic Radius, HR (m)",
+      fontColor: 'black'
+    }
+  }],
+  yAxes:[{
+    scaleLabel: {
+      display: true,
+      labelString:"Probabilistic Stability Prediction (%)",
+      fontColor: 'black'
+    }
+  }]
+}
+};
+public sensitivityChartType: ChartType = 'bar';
+
+public crownChartLabels: Label[] = ['1.8', '2.5','3.2', '3.9', '4.6', '5.3', '6.0', '6.7', '7.4','8.1','8.8','9.5', '10.2','10.9','11.6'];
+public fhwChartLabels: Label[] = ['1.8', '2.5','3.2', '3.9', '4.6', '5.3', '6.0', '6.7', '7.4','8.1','8.8','9.5', '10.2','10.9','11.6'];
+public sideChartLabels: Label[] = ['1.8', '2.5','3.2', '3.9', '4.6', '5.3', '6.0', '6.7', '7.4','8.1','8.8','9.5', '10.2','10.9','11.6'];
+public backChartLabels: Label[] = ['1.8', '2.5','3.2', '3.9', '4.6', '5.3', '6.0', '6.7', '7.4','8.1','8.8','9.5', '10.2','10.9','11.6'];
+public sensitivityChartLegend = true;
+
+public crownChartData: ChartDataSets[] = [
+  { data: [45,55,65,59,45,33,80,81,56,45,55,26,40,51,34], label: 'stable', stack: 'a' },
+  { data: [25,30,20,19,26,27, 9,14,15,27,37,29,35,36,32], label: 'unstable', stack: 'a' },
+  { data: [30,15,15,22,29,40,11, 5,29,28, 8,45,25,13,34], label: 'failure', stack: 'a' }
+    ];
+public fhwChartData: ChartDataSets[] = [
+  { data: [25,30,20,19,26,27, 9,14,15,27,37,29,35,36,32], label: 'stable', stack: 'a' },
+  { data: [45,55,65,59,45,33,80,81,56,45,55,26,40,51,34], label: 'unstable', stack: 'a' },
+  { data: [30,15,15,22,29,40,11, 5,29,28, 8,45,25,13,34], label: 'failure', stack: 'a' }
+  ];
+public sideChartData: ChartDataSets[] = [
+  { data: [45,55,65,59,45,33,80,81,56,45,55,26,40,51,34], label: 'stable', stack: 'a' },
+  { data: [30,15,15,22,29,40,11, 5,29,28, 8,45,25,13,34], label: 'unstable', stack: 'a' },
+  { data: [25,30,20,19,26,27, 9,14,15,27,37,29,35,36,32
+    ], label: 'failure', stack: 'a' }
+  ];
+public backChartData: ChartDataSets[] = [
+  { data: [30,15,15,22,29,40,11, 5,29,28, 8,45,25,13,34], label: 'stable', stack: 'a' },
+  { data: [25,30,20,19,26,27, 9,14,15,27,37,29,35,36,32], label: 'unstable', stack: 'a' },
+  { data: [45,55,65,59,45,33,80,81,56,45,55,26,40,51,34], label: 'failure', stack: 'a' }
+  ];
+    public sensitivityChartColors: Color[] = [
+      { backgroundColor: 'rgba(34,101, 86,0.2)'},
+      {backgroundColor:'rgba(0,0,0,0.4)'},
+      {backgroundColor:'rgba(255,0,0,0.3)'}];
   constructor(private router: Router, private route: ActivatedRoute, private service: ForAllService) { }
+
   public refinedChartData: ChartDataSets[] = [
     { type: 'line',
     data: [{x:0.5, y:0.0766},{x:1, y:1001},{x:34, y:1023.5}], 
     fill: 1, 
     pointStyle:'line',
-    label: "Stable zone"
-    },
+    label: "Stable zone"    },
     { type: 'line',
       data: [{x:1, y:0.0766},{x:34, y:1023.5}, {x:56, y:1003.132}], 
       fill: 2, 
@@ -267,3 +324,4 @@ public modifiedChartOptions: ChartOptions = {
 
   }
 }
+
